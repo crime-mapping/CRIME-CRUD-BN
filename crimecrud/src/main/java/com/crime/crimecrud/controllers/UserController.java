@@ -49,7 +49,6 @@ public class UserController {
 
             User user = userService.emailExists(logUser.getEmail());
             if (user == null) {
-                System.out.println("User"+user.getEmail()+" Password "+user.getPassword());
                 return ResponseEntity.badRequest().body(new ErrorResponse("Invalid Credentials !"));
             }
             BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();

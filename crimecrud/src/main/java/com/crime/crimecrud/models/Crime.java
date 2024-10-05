@@ -9,6 +9,7 @@ public class Crime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private String crimeName;
     private CrimeType crimeType;
     private  EmergencyLevel emergencyLevel;
     private  String suspectDescription;
@@ -19,8 +20,9 @@ public class Crime {
     public Crime() {
     }
 
-    public Crime(long id, CrimeType crimeType, EmergencyLevel emergencyLevel, String suspectDescription, CaseStatus caseStatus, String crimeLocation, Date timeOfOccurence) {
+    public Crime(long id,String crimeName, CrimeType crimeType, EmergencyLevel emergencyLevel, String suspectDescription, CaseStatus caseStatus, String crimeLocation, Date timeOfOccurence) {
         this.id = id;
+        this.crimeName = crimeName;
         this.crimeType = crimeType;
         this.emergencyLevel = emergencyLevel;
         this.suspectDescription = suspectDescription;
@@ -35,6 +37,14 @@ public class Crime {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getCrimeName() {
+        return crimeName;
+    }
+
+    public void setCrimeName(String crimeName) {
+        this.crimeName = crimeName;
     }
 
     public CrimeType getCrimeType() {
